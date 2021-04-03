@@ -4,22 +4,21 @@ Department of Management Science and Technology\
 Athens University of Economics and Business
 
 ## Description
-This repo contains all the lab assignments for applied engineering course.
+Create and generate an simple line chart with a txt dataset.
 
 ## Getting Started
 These instructions will give you a copy of the project up and running on
-your local machine. See deployment
-for notes on deploying the project on a live system.
+your local machine.
 
 ### Prerequisites
-Requirements for the software and other tools to build, test and push
+Requirements for the project's software and other tools to build it in your machine.
 - [Java 8 or newer](https://www.java.com/en/download/manual.jsp)
 - [Apache Maven](https://maven.apache.org/download.cgi)
 
 ### Installing
 A step by step instructions on how to get the jar running.
 
-To install this repo locally
+To install this repo locally run
 
     git clone https://github.com/AthinaDavari/Lab_Assignments_Applied_Engineering.git
 
