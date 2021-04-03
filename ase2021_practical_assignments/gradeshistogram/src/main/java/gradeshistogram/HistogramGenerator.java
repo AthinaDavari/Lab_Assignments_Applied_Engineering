@@ -22,8 +22,8 @@ import org.jfree.data.xy.XYSeriesCollection;
 public class HistogramGenerator {
 
 	/**
-	 * Receives a single dimension Integer array. From this array the dataset that
-	 * will be used for the visualization of a line chart. Finally, The chart is
+	 * Receives a single dimension Integer array. This array is the dataset that
+	 * will be used for the visualization of the line chart. Finally, The chart is
 	 * generated with the use of the aforementioned dataset and then presented in
 	 * the screen.
 	 * 
