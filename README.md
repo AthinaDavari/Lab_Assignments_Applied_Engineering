@@ -37,7 +37,7 @@ and then enter the folder gradeshistogram and run the command
 
     java -jar target\gradeshistogram-0.0.1-SNAPSHOT-jar-with-dependencies.jar [FILE]
 
-FILE : the name of the txt which contains the dataset for the chart.  
+FILE : the name of the txt file (or the url we can find that file) which contains the dataset for the chart.  
 
 ## Demo
 If you install and run the software successfully, you will see a chart like the following:
