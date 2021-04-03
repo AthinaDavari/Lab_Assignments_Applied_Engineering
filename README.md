@@ -32,5 +32,10 @@ and then enter the folder gradeshistogram and run the command
 
 FILE : the name of the txt which contains the dataset for the chart.  
 
+## Demo
+If you install and run the software successfully, you will see a chart like the following:
+
+<img src="media/demo.png" alt="Quarantine Activities" height="500"/>
+
 ## Authors
 * [Athina Davari](https://github.com/AthinaDavari) 
