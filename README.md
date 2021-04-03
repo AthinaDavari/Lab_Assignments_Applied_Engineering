@@ -3,8 +3,15 @@ Assignment for 6th semester course "Applied Software Engineering"\
 Department of Management Science and Technology\
 Athens University of Economics and Business
 
-## Description
+### Description
 Create and generate an simple line chart with a txt dataset.
+
+## Menu
+- [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installing](#installing)
+- [Demo](#demo)
+- [Authors](#authors)
 
 ## Getting Started
 These instructions will give you a copy of the project up and running on
