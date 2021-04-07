@@ -68,7 +68,7 @@ public class HistogramGenerator {
 	/**
 	 * Receives a String which represents the name of the txt file we want to read
 	 * or the url in which we can find that file. Reads the dataset for a file and
-	 * returns it in a single dimension Integer array.
+	 * returns it in a single dimension double array.
 	 * 
 	 * @param fileparam String
 	 * 
