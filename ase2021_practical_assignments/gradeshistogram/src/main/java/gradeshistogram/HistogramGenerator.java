@@ -48,6 +48,7 @@ public class HistogramGenerator {
 		 */
 		dataset.addSeries("Frequency", dataValues, (int) Math.ceil(maxValue));
 
+		// Declare and initialize a Histogram JFreeChart
 		JFreeChart histogram = ChartFactory.createHistogram("Histogram", "Data", "Frequency", dataset);
 
 		// paint background
