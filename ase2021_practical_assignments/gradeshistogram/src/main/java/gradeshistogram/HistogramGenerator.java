@@ -1,73 +1,66 @@
 package gradeshistogram;
 
 import java.util.List;
-import java.awt.Color;
 import java.io.*;
 import java.util.ArrayList;
+import java.io.IOException;
 
 //imports for chart generation
+import java.awt.Color;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.xy.XYSeries;
-import org.jfree.data.xy.XYSeriesCollection;
+import org.jfree.data.statistics.HistogramDataset;
 
 /**
  * @author AthinaDavari
  * 
- * The purpose of this class is to visualize a line chart with data from
+ * The purpose of this class is to visualize a histogram chart with data from
  * a dataset in a txt file.
  */
 public class HistogramGenerator {
 
 	/**
 	 * Receives a single dimension Integer array. This array is the dataset that
-	 * will be used for the visualization of the line chart. Finally, The chart is
+	 * will be used for the visualization of the histogram chart. Finally, The chart is
 	 * generated with the use of the aforementioned dataset and then presented in
 	 * the screen.
 	 * 
 	 * @param dataValues single dimension integer array
 	 */
-	public void generateLineChart(Integer[] dataValues) {
+	public void generateHistogramChart(double[] dataValues) {
+		
 		/*
-		 * The XYSeriesCollection object is a set XYSeries series (dataset) that can be
-		 * visualized in the same chart
+		 * The Histogram object creates a new (empty) dataset with the
+		 * type of HistogramType.FREQUENCY.
 		 */
-		XYSeriesCollection dataset = new XYSeriesCollection();
-		/*
-		 * The XYSeries that are loaded in the dataset. There might be many series in
-		 * one dataset.
-		 */
-		XYSeries data = new XYSeries("dataset values");
-
-		/*
-		 * Populating the XYSeries data object from the input Integer array values.
-		 */
-		for (int i = 0; i < dataValues.length; i++) {
-			data.add(i, dataValues[i]);
+		HistogramDataset dataset = new HistogramDataset();
+		
+	    // find the max value in the double array with the data for histogram
+		double maxValue = -1;
+		for (double d:dataValues) {
+			maxValue=  Math.max(maxValue, d);
 		}
-
-		// add the series to the dataset
-		dataset.addSeries(data);
-
-		boolean legend = false; // do not visualize a legend
-		boolean tooltips = false; // do not visualize tooltips
-		boolean urls = false; // do not visualize urls
-
-		// Declare and initialize a createXYLineChart JFreeChart
-		JFreeChart chart = ChartFactory.createXYLineChart("Dataset Visualization", "x axis", "y axis", dataset,
-				PlotOrientation.VERTICAL, legend, tooltips, urls);
+		
+		/*
+		 * add the series to the dataset with the specified number of bins, 
+		 * one bin for each number smaller than the bigger number on the dataset.
+		 */
+		dataset.addSeries("Frequency", dataValues, (int) Math.ceil(maxValue));
+		
+		JFreeChart histogram = ChartFactory.createHistogram("Histogram",
+                "Data", "Frequency", dataset);
 		
 		// paint background  
-		chart.setBackgroundPaint(Color.magenta);
+		histogram.setBackgroundPaint(Color.magenta);
 
 		/*
 		 * Initialize a frame for visualizing the chart and attach the previously
-		 * created chart.
+		 * created histogram.
 		 */
-		ChartFrame frame = new ChartFrame("Dataset Visualization", chart);
+		ChartFrame frame = new ChartFrame("Histogam", histogram);
 		frame.pack();
+		
 		// makes the previously created frame visible
 		frame.setVisible(true);
 	}
@@ -81,7 +74,7 @@ public class HistogramGenerator {
 	 * 
 	 * @return a dataset in a single dimension Integer array
 	 */
-	public Integer[] readDataset(String fileparam) throws IOException {
+	public double[] readDataset(String fileparam) throws IOException {
 
 		File file = new File(fileparam); // creates a new file instance
 		FileReader fr = new FileReader(file); // reads the file
@@ -97,8 +90,7 @@ public class HistogramGenerator {
 		fr.close(); // closes the stream and release the resources
 
 		// a single dimension Integer list to a single dimension Integer array
-		Integer[] dataValues = new Integer[list.size()];
-		list.toArray(dataValues);
+		double[] dataValues = list.stream().mapToDouble(i->i).toArray();
 
 		return dataValues;
 
@@ -108,8 +100,8 @@ public class HistogramGenerator {
 		try {
 
 			HistogramGenerator histogram = new HistogramGenerator();
-			Integer[] dataValues = histogram.readDataset(args[0]);
-			histogram.generateLineChart(dataValues);
+			double[] dataValues = histogram.readDataset(args[0]);
+			histogram.generateHistogramChart(dataValues);
 
 		} catch (Exception e) {
 			e.printStackTrace();
