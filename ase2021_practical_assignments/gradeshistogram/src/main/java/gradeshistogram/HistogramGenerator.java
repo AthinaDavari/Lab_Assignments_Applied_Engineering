@@ -89,7 +89,7 @@ public class HistogramGenerator {
 
 		fr.close(); // closes the stream and release the resources
 
-		// a single dimension Integer list to a single dimension Integer array
+		// a single dimension Integer list to a single dimension double array
 		double[] dataValues = list.stream().mapToDouble(i -> i).toArray();
 
 		return dataValues;
