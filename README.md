@@ -4,7 +4,7 @@ Department of Management Science and Technology\
 Athens University of Economics and Business
 
 ### Description
-Create and generate an simple line chart with a txt dataset.
+Create and generate a histogram with a txt dataset.
 
 ## Menu
 - [Getting Started](#getting-started)
@@ -33,9 +33,9 @@ In order to build gradeshistogram module and install the jar, run the command in
     
     mvn package
 
-and then enter the folder gradeshistogram and run the command
+and then enter the gradeshistogram folder, next target folder and run the command
 
-    java -jar target/gradeshistogram-0.0.1-SNAPSHOT-jar-with-dependencies.jar [FILE]
+    java -jar gradeshistogram-0.0.1-SNAPSHOT-jar-with-dependencies.jar [FILE]
 
 FILE : the name of the txt file (or the url we can find that file) which contains the dataset for the chart.  
 

@@ -15,43 +15,42 @@ import org.jfree.data.statistics.HistogramDataset;
 /**
  * @author AthinaDavari
  * 
- * The purpose of this class is to visualize a histogram chart with data from
- * a dataset in a txt file.
+ * The purpose of this class is to visualize a histogram chart with data
+ * from a dataset in a txt file.
  */
 public class HistogramGenerator {
 
 	/**
 	 * Receives a single dimension Integer array. This array is the dataset that
-	 * will be used for the visualization of the histogram chart. Finally, The chart is
-	 * generated with the use of the aforementioned dataset and then presented in
+	 * will be used for the visualization of the histogram chart. Finally, The chart
+	 * is generated with the use of the aforementioned dataset and then presented in
 	 * the screen.
 	 * 
 	 * @param dataValues single dimension integer array
 	 */
 	public void generateHistogramChart(double[] dataValues) {
-		
+
 		/*
-		 * The Histogram object creates a new (empty) dataset with the
-		 * type of HistogramType.FREQUENCY.
+		 * The Histogram object creates a new (empty) dataset with the type of
+		 * HistogramType.FREQUENCY.
 		 */
 		HistogramDataset dataset = new HistogramDataset();
-		
-	    // find the max value in the double array with the data for histogram
+
+		// find the max value in the double array with the data for histogram
 		double maxValue = -1;
-		for (double d:dataValues) {
-			maxValue=  Math.max(maxValue, d);
+		for (double d : dataValues) {
+			maxValue = Math.max(maxValue, d);
 		}
-		
+
 		/*
-		 * add the series to the dataset with the specified number of bins, 
-		 * one bin for each number smaller than the bigger number on the dataset.
+		 * add the series to the dataset with the specified number of bins, one bin for
+		 * each number smaller than the bigger number on the dataset.
 		 */
 		dataset.addSeries("Frequency", dataValues, (int) Math.ceil(maxValue));
-		
-		JFreeChart histogram = ChartFactory.createHistogram("Histogram",
-                "Data", "Frequency", dataset);
-		
-		// paint background  
+
+		JFreeChart histogram = ChartFactory.createHistogram("Histogram", "Data", "Frequency", dataset);
+
+		// paint background
 		histogram.setBackgroundPaint(Color.magenta);
 
 		/*
@@ -60,7 +59,7 @@ public class HistogramGenerator {
 		 */
 		ChartFrame frame = new ChartFrame("Histogam", histogram);
 		frame.pack();
-		
+
 		// makes the previously created frame visible
 		frame.setVisible(true);
 	}
@@ -90,7 +89,7 @@ public class HistogramGenerator {
 		fr.close(); // closes the stream and release the resources
 
 		// a single dimension Integer list to a single dimension Integer array
-		double[] dataValues = list.stream().mapToDouble(i->i).toArray();
+		double[] dataValues = list.stream().mapToDouble(i -> i).toArray();
 
 		return dataValues;
 
