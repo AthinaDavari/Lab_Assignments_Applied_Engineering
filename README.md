@@ -29,7 +29,7 @@ To install this repo locally run
 
     git clone https://github.com/AthinaDavari/Lab_Assignments_Applied_Engineering.git
 
-In order to build gradeshistogram module and install the jar, run the command in repos' ase2021_practical_assignments directory
+In order to build gradeshistogram module and install the jar, run the command in repos' root directory
     
     mvn package
 
