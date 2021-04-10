@@ -8,8 +8,9 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>gradeshistogram</artifactId>
-	<name>Module Demo</name>
-	<description>This is a module.</description>
+
+	<name>Histogram Generator</name>
+	<description>This module creates a histogram from a given file of grades.</description>
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.jfree/jfreechart -->
