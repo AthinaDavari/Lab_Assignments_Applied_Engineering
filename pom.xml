@@ -8,7 +8,7 @@
 	<packaging>pom</packaging>
 
 	<name>Assignments for ASE</name>
-	<description>This simple project demonstrates how to structure a Maven multi-module project.</description>
+	<description>This project contains all the assignments for Applied Software Engineering course.</description>
 
 	<modules>
 		<module>gradeshistogram</module>
