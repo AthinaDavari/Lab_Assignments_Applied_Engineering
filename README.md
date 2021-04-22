@@ -1,5 +1,5 @@
 # Lab_Assignments_Applied_Engineering
-[![Build Status](https://travis-ci.com/AthinaDavari/Lab_Assignments_Applied_Engineering.svg?token=KTnRCGLsUs8EWFmbszcX&branch=main)](https://travis-ci.com/AthinaDavari/Lab_Assignments_Applied_Engineering)\
+[![Build Status](https://travis-ci.com/AthinaDavari/Lab_Assignments_Applied_Engineering.svg?token=KTnRCGLsUs8EWFmbszcX&branch=development)](https://travis-ci.com/AthinaDavari/Lab_Assignments_Applied_Engineering)\
 Assignment for 6th semester course "Applied Software Engineering"\
 Department of Management Science and Technology\
 Athens University of Economics and Business
