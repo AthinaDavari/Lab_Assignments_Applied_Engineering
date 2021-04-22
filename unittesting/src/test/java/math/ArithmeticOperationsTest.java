@@ -60,7 +60,7 @@ public class ArithmeticOperationsTest {
 	}
 
 	@Test
-	public void testMultiply_xYNonNegativeAndXYMultiplySmallerThanMaxInteger() {
+	public void testMultiply_xYNonNegativeAndXYMultiplyEqualOrSmallerThanMaxInteger() {
 		Assert.assertEquals(15, arop.multiply(5, 3));
 		Assert.assertEquals(1796704, arop.multiply(1456, 1234));
 	}
