@@ -19,8 +19,10 @@ public class MyMath {
 	 *                                     zero or bigger than 12
 	 */
 	public int factorial(int n) {
-		if (n < 0 || n > 12) {
-			throw new IllegalArgumentException("n should be >= 0 and <= 12");
+		if (n < 0) {
+			throw new IllegalArgumentException("n should be >= 0 (and <= 12)");
+		} else if (n > 12){
+			throw new IllegalArgumentException("n should be <= 12 (and >= 0)");
 		} else {
 			return IntStream.rangeClosed(1, n).reduce(1, (x, y) -> x * y);
 		}

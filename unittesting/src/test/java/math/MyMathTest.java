@@ -14,7 +14,7 @@ public class MyMathTest {
 	@Test
 	public void testFactorial_nNegative_illegalArgumentException() {
 		thrown.expect(IllegalArgumentException.class);
-		thrown.expectMessage("n should be >= 0 and <= 12");
+		thrown.expectMessage("n should be >= 0 (and <= 12)");
 		mm.factorial(-1);
 		mm.factorial(-80);
 
@@ -23,7 +23,7 @@ public class MyMathTest {
 	@Test
 	public void testFactorial_nBiggerThanTwelve_illegalArgumentException() {
 		thrown.expect(IllegalArgumentException.class);
-		thrown.expectMessage("n should be >= 0 and <= 12");
+		thrown.expectMessage("n should be <= 12 (and >= 0)");
 		mm.factorial(13);
 		mm.factorial(500);
 	}
