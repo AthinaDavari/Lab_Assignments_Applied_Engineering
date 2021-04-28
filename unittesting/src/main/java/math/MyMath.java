@@ -21,12 +21,24 @@ public class MyMath {
 	public int factorial(int n) {
 		if (n < 0) {
 			throw new IllegalArgumentException("n should be >= 0 (and <= 12)");
-		} else if (n > 12){
+		} else if (n > 12) {
 			throw new IllegalArgumentException("n should be <= 12 (and >= 0)");
 		} else {
 			return IntStream.rangeClosed(1, n).reduce(1, (x, y) -> x * y);
 		}
 
+	}
+
+	public boolean isPrime(int n) {
+		if (n < 2) {
+			throw new IllegalArgumentException("n should be >=2");
+		}
+		for (int i = 2; i <= n / 2; i++) {
+			if ((n % i) == 0) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 }
