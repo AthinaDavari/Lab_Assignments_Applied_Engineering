@@ -1,7 +1,7 @@
 language: java
 
 jdk:
-  - openjdk11
+  - openjdk8
 
 branches:
   only:
@@ -11,15 +11,15 @@ branches:
 sudo: required # Linux administrator permissions
 
 before_install:
- - sudo apt update # Update the package list
+  - sudo apt update # Update the package list
 
 install:
- - sudo apt install maven -y # Install required packages
+  - sudo apt install maven -y # Install required packages
 
 script: 
-  - mvn clean package 
+  - mvn clean package jacoco:report
 
 after_success:
-- echo "Process terminated successfully"
+  - echo "Process terminated successfully"
 
 
