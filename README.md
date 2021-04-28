@@ -1,6 +1,6 @@
 # Lab_Assignments_Applied_Engineering
 [![Build Status](https://travis-ci.com/AthinaDavari/Lab_Assignments_Applied_Engineering.svg?token=KTnRCGLsUs8EWFmbszcX&branch=development)](https://travis-ci.com/AthinaDavari/Lab_Assignments_Applied_Engineering)
-[![codecov](https://codecov.io/gh/AthinaDavari/Lab_Assignments_Applied_Engineering/branch/main/graph/badge.svg?token=Z2WKI0W2YK)](https://codecov.io/gh/AthinaDavari/Lab_Assignments_Applied_Engineering)
+[![codecov](https://codecov.io/gh/AthinaDavari/Lab_Assignments_Applied_Engineering/branch/development/graph/badge.svg?token=Z2WKI0W2YK)](https://codecov.io/gh/AthinaDavari/Lab_Assignments_Applied_Engineering)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)\
 Assignment for 6th semester course "Applied Software Engineering"\
 Department of Management Science and Technology\
