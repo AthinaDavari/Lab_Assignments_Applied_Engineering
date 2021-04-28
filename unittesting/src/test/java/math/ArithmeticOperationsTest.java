@@ -9,60 +9,67 @@ public class ArithmeticOperationsTest {
 	ArithmeticOperations arop = new ArithmeticOperations();
 
 	@Test(expected = ArithmeticException.class)
-	public void testDivide_zeroDenominator_arithmeticException() {
-		arop.divide(1, 0);
-		arop.divide(8, 0);
-		arop.divide(-550, 0);
+	public void test_divide_zeroDenominator_arithmeticException() {
+		arop.divide(134499, 0);		
 	}
 
 	@Test
-	public void testDivide_nonZeroDenominator() {
+	public void test_divide_nonZeroDenominator() {
 		Assert.assertEquals(1, arop.divide(1, 1), 0.01);
 		Assert.assertEquals(1.5, arop.divide(3, 2), 0.01);
 		Assert.assertEquals(1.5, arop.divide(-3, -2), 0.01);
 		Assert.assertEquals(-1.5, arop.divide(3, -2), 0.01);
 		Assert.assertEquals(-1, arop.divide(2, -2), 0.01);
+		Assert.assertEquals(-2, arop.divide(2, -1), 0.01);
+		Assert.assertEquals(2, arop.divide(2, 1), 0.01);
+		Assert.assertEquals(0, arop.divide(0, 1), 0.01);
 	}
 
 	@Rule
 	public final ExpectedException thrown = ExpectedException.none();
 
 	@Test
-	public void testMultiply_xNegative_illegalArgumentException() {
+	public void test_multiply_xNegative_illegalArgumentException() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("x & y should be >= 0");
-		arop.multiply(-4, 1);
 		arop.multiply(-18, 8);
 	}
 
 	@Test
-	public void testMultiply_yNegative_illegalArgumentException() {
+	public void test_multiply_yNegative_illegalArgumentException() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("x & y should be >= 0");
-		arop.multiply(4, -1);
 		arop.multiply(5, -1894789);
 	}
 
 	@Test
-	public void testMultiply_xAndYNegative_illegalArgumentException() {
+	public void test_multiply_xAndYNegative_illegalArgumentException() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("x & y should be >= 0");
 		arop.multiply(-4, -1);
-		arop.multiply(-18, -8);
+	}
+	
+	@Test
+	public void test_multiply_xNonNegativeAndYZero_arithmeticException() {
+		thrown.expect(ArithmeticException.class);
+		thrown.expectMessage("/ by zero");
+		arop.multiply(22222222, 0);
 	}
 
 	@Test
-	public void testMultiply_xYNonNegativeAndXYMultiplyBiggerThanMaxInteger_illegalArgumentException() {
+	public void test_multiply_xNonNegativeYPositiveAndXYMultiplyBiggerThanMaxInteger_illegalArgumentException() {
 		thrown.expect(IllegalArgumentException.class);
 		thrown.expectMessage("The product does not fit in an Integer variable");
-		arop.multiply(22222222, 88888888);
-		arop.multiply(7890269, 930487279);
+		arop.multiply(1073741824, 2);
+		
 	}
 
 	@Test
-	public void testMultiply_xYNonNegativeAndXYMultiplyEqualOrSmallerThanMaxInteger() {
+	public void test_multiply_xNonNegativeYPositiveAndXYMultiplyEqualOrSmallerThanMaxInteger() {
 		Assert.assertEquals(15, arop.multiply(5, 3));
 		Assert.assertEquals(1796704, arop.multiply(1456, 1234));
+		Assert.assertEquals(0, arop.multiply(0, 1234));
+		Assert.assertEquals(2147483647, arop.multiply(1, 2147483647));
 	}
 
 }
