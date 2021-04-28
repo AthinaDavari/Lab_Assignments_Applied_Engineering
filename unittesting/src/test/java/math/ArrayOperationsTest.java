@@ -2,20 +2,27 @@ package math;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import io.FileIO;
 
 import static org.mockito.Mockito.*;
 
+@RunWith(MockitoJUnitRunner.class)
 public class ArrayOperationsTest {
 	ArrayOperations ao = new ArrayOperations();
 	public static String resourcesPath = "src/test/resources/";
 
+	@Mock
+	MyMath mm;
+
+	@Mock
+	FileIO fileio;
+
 	@Test
 	public void test_findPrimesInFile_allFileDataValid() {
-		MyMath mm = mock(MyMath.class);
-		FileIO fileio = mock(FileIO.class);
-
 		String filepath = resourcesPath.concat("numbers_valid.txt");
 
 		when(fileio.readFile(filepath)).thenReturn(new int[] { 5, 7, 9, 19, 6, 15, 11 });
@@ -35,9 +42,6 @@ public class ArrayOperationsTest {
 
 	@Test
 	public void test_findPrimesInFile_NotallFileDataValid() {
-		MyMath mm = mock(MyMath.class);
-		FileIO fileio = mock(FileIO.class);
-
 		String filepath = resourcesPath.concat("invalid_input.txt");
 
 		when(fileio.readFile(filepath)).thenReturn(new int[] { 1, 2, 3, 6, 9, 7786, 589539, -18, 9, 0, 4 });
