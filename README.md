@@ -52,7 +52,7 @@ and then:
 	    
 	    mvn test  
 
- > Tests have been created only for unittesting module.
+  > Tests have been created only for unittesting module.
 
 * If you want to generate JaCoCo Report, run the command in repos' root directory directory: 
  
