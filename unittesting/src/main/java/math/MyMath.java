@@ -13,7 +13,7 @@ public class MyMath {
 	/**
 	 * Performs the calculation of the factorial of a given number.
 	 * 
-	 * @param the given number we want to calculate its factorial
+	 * @param n the given number we want to calculate its factorial
 	 * @return the result of the calculation for the numbers' factorial
 	 * @exception IllegalArgumentException when the given number is smaller than
 	 *                                     zero or bigger than 12
@@ -29,6 +29,13 @@ public class MyMath {
 
 	}
 
+	/**
+	 * Performs an operation to see if a number is prime or not and returns the
+	 * result.
+	 * 
+	 * @param n the given number we want to see if it is prime or not
+	 * @return if the number is prime or not
+	 */
 	public boolean isPrime(int n) {
 		if (n < 2) {
 			throw new IllegalArgumentException("n should be >=2");
