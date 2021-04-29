@@ -18,15 +18,33 @@ As mentioned in main README.md, the requirements for the project's software and 
 - [Apache Maven](https://maven.apache.org/download.cgi)
 
 ### Installing
-A step by step instructions on how to run the unittesting tests.
+A step by step instructions on how to run the unittesting tests and export JaCoCo Report.
 
-To install this repo locally run
+To install this repo locally run:
 
     git clone https://github.com/AthinaDavari/Lab_Assignments_Applied_Engineering.git
 
-In order to test the unittesting module, run the command in unittesting directory
+- In order to test the unittesting module, run the command in unittesting directory:
     
-    mvn test
+        mvn test
+    
+- If you want to generate JaCoCo Report, run the command in unittesting directory:
+ 
+        mvn package jacoco:report
+     
+  and to open the report run:
+
+   - For Windows cmd:
+      
+         target\site\jacoco\index.html
+           
+   - For Git Bash:
+   
+         start target/site/jacoco/index.html
+      
+   - For Linux terminal:
+   
+         xdg-open target/site/jacoco/index.html
     
 ## Demo
 If you install and run the unittesting test successfully, you will see a green "BUILD SUCCESS" message:

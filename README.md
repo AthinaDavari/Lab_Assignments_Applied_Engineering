@@ -29,28 +29,50 @@ Requirements for the project's software and other tools to build it in your mach
 ### Installing
 A step by step instructions on how to get the jar running.
 
-To install this repo locally run
+To install this repo locally run:
 
     git clone https://github.com/AthinaDavari/Lab_Assignments_Applied_Engineering.git
 
-In order to build the modules and install the jar, run the command in repos' root directory
+In order to build the modules and install the jar, run the command in repos' root directory:
     
     mvn package
 
 and then:
 * if you want to generate a histogram:
 
-	enter the gradeshistogram folder, next target folder and run the command
+	enter the gradeshistogram folder, next target folder and run the command:
 	
 	    java -jar gradeshistogram-0.0.1-SNAPSHOT-jar-with-dependencies.jar [FILE]
 	
 	FILE : the name of the txt file (or the url we can find that file) which contains the dataset for the chart.
 
-* If you want to test the unittesting module:
+* If you want to test modules:
 
-	run the command in unittesting directory
+	run the command in repos' root directory:
 	    
 	    mvn test  
+
+ > Tests have been created only for unittesting module.
+
+* If you want to generate JaCoCo Report, run the command in repos' root directory directory: 
+ 
+        mvn package jacoco:report
+     
+  > It creates report only for unittesting module.
+  
+  and to open the report run:
+
+   * For Windows cmd:
+      
+         unittesting\target\site\jacoco\index.html
+           
+   * For Git Bash:
+   
+         start unittesting/target/site/jacoco/index.html
+      
+   * For Linux terminal:
+   
+         xdg-open unittesting/target/site/jacoco/index.html
 
 ## Demo
 * If you install and run the gratehistogram jar successfully, you will see a chart like the following:
