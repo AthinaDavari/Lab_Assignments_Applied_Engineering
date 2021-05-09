@@ -7,8 +7,8 @@ Department of Management Science and Technology\
 Athens University of Economics and Business
 
 ### Description
-1. First Assignment: Create and generate a histogram with a txt dataset.
-2. Second Assignment: Test functions with junit. 
+1. [First Assignment: Create and generate a histogram with a txt dataset.](./gradeshistogram/README.md)
+2. [Second Assignment: Test functions with junit.](./unittesting/README.md) 
 
 ## Menu
 - [Getting Started](#getting-started)
