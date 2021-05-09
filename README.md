@@ -14,7 +14,6 @@ Athens University of Economics and Business
 - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installing](#installing)
-- [Demo](#demo)
 - [Authors](#authors)
 
 ## Getting Started
