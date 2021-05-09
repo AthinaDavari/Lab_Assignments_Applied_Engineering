@@ -7,7 +7,7 @@ A project for the second ASE Unit Testing assignment.
 - [Authors](#authors)
 
 ## Run the module
-Step-by-step instructions on how to run the unittesting tests and export JaCoCo Report.
+Step-by-step instructions on how to run the unittesting tests and export JaCoCo Report when you have already installed the project on your local machine.
 
 In order to test the unittesting module, run the command in unittesting directory:
     
