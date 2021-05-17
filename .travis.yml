@@ -1,0 +1,25 @@
+language: java
+
+jdk:
+  - openjdk8
+
+branches:
+  only:
+  - master
+  - development
+
+sudo: required # Linux administrator permissions
+
+before_install:
+  - sudo apt update # Update the package list
+
+install:
+  - sudo apt install maven -y # Install required packages
+
+script: 
+  - mvn clean package jacoco:report cobertura:cobertura
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t bffea5bd-7caa-4f7a-b0bf-bfcc4086577c
+
+

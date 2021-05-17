@@ -1,16 +1,19 @@
 # Lab_Assignments_Applied_Engineering
+[![Build Status](https://travis-ci.com/AthinaDavari/Lab_Assignments_Applied_Engineering.svg?token=KTnRCGLsUs8EWFmbszcX&branch=development)](https://travis-ci.com/AthinaDavari/Lab_Assignments_Applied_Engineering)
+[![codecov](https://codecov.io/gh/AthinaDavari/Lab_Assignments_Applied_Engineering/branch/development/graph/badge.svg?token=Z2WKI0W2YK)](https://codecov.io/gh/AthinaDavari/Lab_Assignments_Applied_Engineering)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)\
 Assignment for 6th semester course "Applied Software Engineering"\
 Department of Management Science and Technology\
 Athens University of Economics and Business
 
 ### Description
-Create and generate a histogram with a txt dataset.
+1. [First Assignment: Create and generate a histogram with a txt dataset.](./gradeshistogram/README.md)
+2. [Second Assignment: Test functions with junit.](./unittesting/README.md) 
 
 ## Menu
 - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installing](#installing)
-- [Demo](#demo)
 - [Authors](#authors)
 
 ## Getting Started
@@ -23,26 +26,11 @@ Requirements for the project's software and other tools to build it in your mach
 - [Apache Maven](https://maven.apache.org/download.cgi)
 
 ### Installing
-A step by step instructions on how to get the jar running.
+Step-by-step instructions on how to install the project on your local machine.
 
-To install this repo locally run
+To install this repo locally run:
 
     git clone https://github.com/AthinaDavari/Lab_Assignments_Applied_Engineering.git
-
-In order to build gradeshistogram module and install the jar, run the command in repos' root directory
-    
-    mvn package
-
-and then enter the gradeshistogram folder, next target folder and run the command
-
-    java -jar gradeshistogram-0.0.1-SNAPSHOT-jar-with-dependencies.jar [FILE]
-
-FILE : the name of the txt file (or the url we can find that file) which contains the dataset for the chart.  
-
-## Demo
-If you install and run the software successfully, you will see a chart like the following:
-
-<img src="media/demo.png" alt="Quarantine Activities" height="500"/>
 
 ## Authors
 * [Athina Davari](https://github.com/AthinaDavari) 
