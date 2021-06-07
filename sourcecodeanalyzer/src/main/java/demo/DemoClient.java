@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import codeanalyzer.*;
+import metricsexporter.FileMetricsExporter;
 import metricsexporter.FileMetricsExporterFactory;
 
 public class DemoClient {
@@ -38,8 +39,8 @@ public class DemoClient {
 		metrics.put("noc",noc);
 				
 		FileMetricsExporterFactory exporter = new FileMetricsExporterFactory();
-		exporter.createFileMetricsExporter(outputFileType, metrics, outputFilePath);
-		
+		FileMetricsExporter fileexp= exporter.createFileMetricsExporter(outputFileType);
+		fileexp.writeFile(metrics, outputFilePath);
 	}
 
 }

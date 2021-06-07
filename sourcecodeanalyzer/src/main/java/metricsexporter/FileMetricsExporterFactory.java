@@ -1,18 +1,36 @@
 package metricsexporter;
 
-import java.util.Map;
-
+/**
+ * The purpose of this class is to create a factory to generate objects of type
+ * FileMetricExporter based on given information.
+ * 
+ * @author AthinaDavari
+ *
+ */
 public class FileMetricsExporterFactory {
 
-	public void createFileMetricsExporter(String outputType, Map<String, Integer> metrics, String filepath) {
-	
+	/**
+	 * Return the type of FileMetricExporter we want to use to export metrics of a
+	 * file.
+	 * 
+	 * @param outputType String the type of the output file we want to export
+	 *                   metrics
+	 * 
+	 * @return FileMetricsExporter
+	 * 
+	 */
+	public FileMetricsExporter createFileMetricsExporter(String outputType) {
+
+		FileMetricsExporter fileexp;
 		if (outputType.equals("csv")) {
-			new CsvMetricsExporter();
+			fileexp = new CsvMetricsExporter();
 		} else if (outputType.equals("json")) {
-			new JsonMetricsExporter();
+			fileexp = new JsonMetricsExporter();
 		} else {
-			new NullMetricsExporter();
+			fileexp = new NullMetricsExporter();
 		}
-		
+
+		return fileexp;
+
 	}
 }
