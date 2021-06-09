@@ -1,16 +1,15 @@
 package analyzefile;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 
-import codeanalyzer.SourceCodeAnalyzer;
 import metricsexporter.FileMetricsExporter;
 import metricsexporter.FileMetricsExporterFactory;
+import sourcecodeanalyzer.SourceCodeAnalyzerFacade;
 
 /**
  * The purpose of this class is to hide the steps of the java file source code
- * analysis process from the client
+ * analysis process from the client.
  * 
  * @author AthinaDavari
  *
@@ -36,16 +35,9 @@ public class AnalyzeFileFacade {
 	public void analyzeFileProcess(String filepath, String sourceCodeAnalyzerType, String sourceFileLocation,
 			String outputFilePath, String outputFileType) throws IOException {
 
-		SourceCodeAnalyzer analyzer = new SourceCodeAnalyzer(sourceFileLocation);
-		int loc = analyzer.calculateLOC(filepath, sourceCodeAnalyzerType);
-		int nom = analyzer.calculateNOM(filepath, sourceCodeAnalyzerType);
-		int noc = analyzer.calculateNOC(filepath, sourceCodeAnalyzerType);
-
-		Map<String, Integer> metrics = new HashMap<>();
-		metrics.put("loc", loc);
-		metrics.put("nom", nom);
-		metrics.put("noc", noc);
-
+		SourceCodeAnalyzerFacade analyzer = new SourceCodeAnalyzerFacade();
+		Map<String, Integer> metrics = analyzer.calculateMetrics(sourceFileLocation, filepath, sourceCodeAnalyzerType);
+		
 		FileMetricsExporterFactory exporter = new FileMetricsExporterFactory();
 		FileMetricsExporter fileexp = exporter.createFileMetricsExporter(outputFileType);
 		fileexp.writeFile(metrics, outputFilePath);

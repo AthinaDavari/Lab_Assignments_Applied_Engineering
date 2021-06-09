@@ -24,8 +24,8 @@ public class DemoClient {
 			System.exit(1);
 		}
 
-		AnalyzeFileFacade analfile = new AnalyzeFileFacade();
-		analfile.analyzeFileProcess(filepath, sourceCodeAnalyzerType, sourceFileLocation, outputFilePath,
+		AnalyzeFileFacade analyzefile = new AnalyzeFileFacade();
+		analyzefile.analyzeFileProcess(filepath, sourceCodeAnalyzerType, sourceFileLocation, outputFilePath,
 				outputFileType);
 	}
 
