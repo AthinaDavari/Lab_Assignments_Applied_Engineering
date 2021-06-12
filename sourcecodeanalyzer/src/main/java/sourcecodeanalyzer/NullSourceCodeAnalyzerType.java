@@ -11,7 +11,7 @@ import java.io.IOException;
  */
 public class NullSourceCodeAnalyzerType extends SourceCodeAnalyzerType {
 
-	public NullSourceCodeAnalyzerType(String sourcefileloc) throws IOException {
+	public NullSourceCodeAnalyzerType(String sourcefileloc) {
 		super(sourcefileloc);
 	}
 

@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  */
 public class Regex extends SourceCodeAnalyzerType {
 
-	public Regex(String sourcefileloc) throws IOException {
+	public Regex(String sourcefileloc) {
 		super(sourcefileloc);
 	}
 

@@ -1,7 +1,5 @@
 package sourcefilereader;
 
-import java.io.IOException;
-
 /**
  * The purpose of this class is to create a factory to generate objects of type
  * SourceFileLocation based on given information.
@@ -19,7 +17,7 @@ public class SourceFileLocationFactory {
 	 * @return SourceFileLocation
 	 * 
 	 */
-	public SourceFileLocation createSourceFileLocation(String sourceFileLocation) throws IOException {
+	public SourceFileLocation createSourceFileLocation(String sourceFileLocation) {
 
 		if (sourceFileLocation.equals("web")) {
 			return new WebFile();

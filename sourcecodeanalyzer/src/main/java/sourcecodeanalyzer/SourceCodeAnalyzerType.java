@@ -16,7 +16,7 @@ public abstract class SourceCodeAnalyzerType {
 
 	protected SourceFileLocation sourcefileloc;
 
-	public SourceCodeAnalyzerType(String fileReaderType) throws IOException {
+	public SourceCodeAnalyzerType(String fileReaderType) {
 		
 		this.sourcefileloc = (new SourceFileLocationFactory()).createSourceFileLocation(fileReaderType);
 

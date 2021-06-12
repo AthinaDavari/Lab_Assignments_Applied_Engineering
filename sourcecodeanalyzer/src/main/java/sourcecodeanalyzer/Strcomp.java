@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class Strcomp extends SourceCodeAnalyzerType {
 
-	public Strcomp(String sourcefileloc) throws IOException {
+	public Strcomp(String sourcefileloc) {
 		super(sourcefileloc);
 	}
 

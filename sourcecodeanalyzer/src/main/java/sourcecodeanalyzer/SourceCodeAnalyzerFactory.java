@@ -22,7 +22,7 @@ public class SourceCodeAnalyzerFactory {
 	 * 
 	 * @throws IOException
 	 */
-	public SourceCodeAnalyzerType createSourceCodeAnalyzerType(String sourceCodeAnalyzerType, String sourceFileLocation) throws IOException {
+	public SourceCodeAnalyzerType createSourceCodeAnalyzerType(String sourceCodeAnalyzerType, String sourceFileLocation) {
 
 		if (sourceCodeAnalyzerType.equals("regex")) {
 			return new Regex(sourceFileLocation);
