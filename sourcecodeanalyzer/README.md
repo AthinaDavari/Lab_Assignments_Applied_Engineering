@@ -30,11 +30,11 @@ then enter the target folder and run the command:
 
 In order to test the sourcecodeanalyzer module, run the command in sourcecodeanalyzer directory:
     
-        mvn test
+     mvn test
     
 If you want to generate JaCoCo Report, run the command in sourcecodeanalyzer directory:
  
-        mvn package jacoco:report
+     mvn package jacoco:report
      
   and to open the report run:
 
