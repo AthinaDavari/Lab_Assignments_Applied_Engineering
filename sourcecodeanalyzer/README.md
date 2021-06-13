@@ -66,6 +66,10 @@ Design Patterns used:
 Design Patterns Used: Factory on Strategy and Null Object\
 Package: metricsexporter \
 We wanted outputFileType to be extendable.
+#### Why you selected a specific pattern?
+- A common interface to refer to all objects (of a kind).
+- Creating objects without exposing the instantiation logic to the classes which use outputFileType Objects.
+
 #### Which classes participate in the pattern, serving what role?
 Product:FileMetricsExporter.java\
 Factory:FileMetricsExporterFactory.java\
@@ -86,6 +90,11 @@ Null Object: NullMetricsExporter.java
 Design Patterns Used: Factory - Facade and Null Object\
 Package: sourcecodeanalyzer\
 We wanted sourceCodeAnalyzerType to be extendable.
+#### Why you selected a specific pattern?
+- Facade: Add all the steps of the metrics calculations on a class which works as a subsystem.
+- A common interface to refer to all objects (of a kind).
+- Creating objects without exposing the instantiation logic to the classes which usesourceCodeAnalyzerType Objects.
+
 #### Which classes participate in the pattern, serving what role?
 Facade: SourceCodeAnalyzerFacade.java\
 Functionalities of facade: SourceCodeAnalyzerFactory.java\
@@ -106,6 +115,10 @@ Null Object: NullSourceCodeAnalyzerType.java
 Design Patterns Used: Factory and Null Object\
 Package: sourcefilereader\
 We wanted sourceFileLocation to be extendable.
+#### Why you selected a specific pattern?
+- A common interface to refer to all objects (of a kind).
+- Creating objects without exposing the instantiation logic to the classes which sourceFileLocation Objects.
+
 #### Which classes participate in the pattern, serving what role?
 Product: SourceFileLocation.java\
 Factory: SourceFileLocationFactory.java\
@@ -122,6 +135,9 @@ Null Object: NullFileLocation.java
 Design Patterns Used: Bridge\
 Packages: sourcecodeanalyzer, sourcefilereader\
 We wanted SourceCodeAnalyzers and SourceFileReaders dimensions to be independent.
+#### Why you selected a specific pattern?
+- We want the related classes SourceFileReaders and SourceFileAnalyzer to be two separate hierarchies which can be developed independently of each other. 
+
 #### Which classes participate in the pattern, serving what role?
 Abstraction: SourceFileLocation.java\
 Implementor: SourceFileLocation.java\ 
@@ -137,6 +153,8 @@ Concrete Implementation: LocalDiviceFile.java, WebFile.java, NullFileLocation.ja
 Design Patterns Used: Facade\
 Package: analyzefile\
 We wanted demoCliend class to low coupled to implementations.
+#### Why you selected a specific pattern?
+- We want all the steps of the analysis proccess to be on a class which works as a subsystem.
 
 #### Which classes participate in the pattern, serving what role?
 Facade: AnalyzeFileFacade.java
