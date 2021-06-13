@@ -71,6 +71,9 @@ We wanted outputFileType to be extendable.
 - You are free to choose an algorithm (depents the output file type you want).
 - Extend FileMetricsExporter hierarchy without affecting other class code.
 - Open/Closed Principle: You can create new types of FileMetricsExporter into the program without breaking existing code.
+- You can avoid having to write testing cases which handles the null invalid outputFileType.
+#### Cons: 
+- Problems with handling Nuul cases on tests.
 
 ### SourceCodeAnalyzers redesign
 Design Patterns Used: Factory - Facade and Null Object\
@@ -80,11 +83,18 @@ We wanted sourceCodeAnalyzerType to be extendable.
 - You can isolate your code from the complexity of a subsystem.
 - Use facade to define an entry point to the calulation of Metrics proccess.
 - We can extend SourceCodeAnalyzerType hierarchy without affecting the whole analysis of a file proccess.
+- You can avoid having to write testing cases which handles the null invalid sourceCodeAnalyzerType.
+#### Cons:
+- Problems with handling Nuul cases on tests.
 
 ### SourceFileReaders redesign
 Design Patterns Used: Factory and Null Object\
 Package: sourcefilereader\
 We wanted sourceFileLocation to be extendable.
+#### Pros:
+-  You can avoid having to write testing cases which handles the null invalid sourceFileLocation.
+#### Cons:
+- Problems with handling Nuul cases on tests
 
 ### SourceCodeAnalyzers and SourceFileReaders Connection
 Design Patterns Used: Bridge\
