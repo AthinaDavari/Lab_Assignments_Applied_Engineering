@@ -69,6 +69,7 @@ We wanted outputFileType to be extendable.
 #### Why you selected a specific pattern?
 - A common interface to refer to all objects (of a kind).
 - Creating objects without exposing the instantiation logic to the classes which use outputFileType Objects.
+- Null Object: Handling null cases (invalid outputFileType)
 
 #### Which classes participate in the pattern, serving what role?
 Product:FileMetricsExporter.java\
@@ -94,6 +95,7 @@ We wanted sourceCodeAnalyzerType to be extendable.
 - Facade: Add all the steps of the metrics calculations on a class which works as a subsystem.
 - A common interface to refer to all objects (of a kind).
 - Creating objects without exposing the instantiation logic to the classes which usesourceCodeAnalyzerType Objects.
+- Null Object: Handling null cases (invalid sourceCodeAnalyzerType)
 
 #### Which classes participate in the pattern, serving what role?
 Facade: SourceCodeAnalyzerFacade.java\
@@ -118,7 +120,7 @@ We wanted sourceFileLocation to be extendable.
 #### Why you selected a specific pattern?
 - A common interface to refer to all objects (of a kind).
 - Creating objects without exposing the instantiation logic to the classes which sourceFileLocation Objects.
-
+- Null Object: Handling null cases (invalid sourceFileLocation)
 #### Which classes participate in the pattern, serving what role?
 Product: SourceFileLocation.java\
 Factory: SourceFileLocationFactory.java\
