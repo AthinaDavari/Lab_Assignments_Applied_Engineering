@@ -61,6 +61,7 @@ Design Patterns used:
 - Factory
 - Brigde
 - Facade
+- Null Object
 
 ### MetricsExporters redesign
 Design Patterns Used: Factory on Strategy and Null Object\
