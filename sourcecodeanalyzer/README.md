@@ -68,8 +68,9 @@ Design Patterns Used: Factory on Strategy and Null Object\
 Package: metricsexporter \
 We wanted outputFileType to be extendable.
 #### Why you selected a specific pattern?
-- A common interface to refer to all objects (of a kind).
-- Creating objects without exposing the instantiation logic to the classes which use outputFileType Objects.
+- Factory: A common interface to refer to all objects (of a kind).
+- Factory: Creating objects without exposing the instantiation logic to the classes which use outputFileType Objects.
+- Strategy: Support for more than one outputFileType
 - Null Object: Handling null cases (invalid outputFileType)
 
 #### Which classes participate in the pattern, serving what role?
@@ -89,13 +90,14 @@ Null Object: NullMetricsExporter.java
 - Problems with handling Null cases on tests.
 
 ### SourceCodeAnalyzers redesign
-Design Patterns Used: Factory - Facade and Null Object\
+Design Patterns Used: Factory on Strategy, Facade and Null Object\
 Package: sourcecodeanalyzer\
 We wanted sourceCodeAnalyzerType to be extendable.
 #### Why you selected a specific pattern?
 - Facade: Add all the steps of the metrics calculations on a class which works as a subsystem.
-- A common interface to refer to all objects (of a kind).
-- Creating objects without exposing the instantiation logic to the classes which usesourceCodeAnalyzerType Objects.
+- Factory: A common interface to refer to all objects (of a kind).
+- Strategy: Support for more than one sourceCodeAnalyzerType.
+- Factory: Creating objects without exposing the instantiation logic to the classes which usesourceCodeAnalyzerType Objects.
 - Null Object: Handling null cases (invalid sourceCodeAnalyzerType)
 
 #### Which classes participate in the pattern, serving what role?
@@ -115,12 +117,13 @@ Null Object: NullSourceCodeAnalyzerType.java
 - Problems with handling Null cases on tests.
 
 ### SourceFileReaders redesign
-Design Patterns Used: Factory and Null Object\
+Design Patterns Used: Factory on Strategy and Null Object\
 Package: sourcefilereader\
 We wanted sourceFileLocation to be extendable.
 #### Why you selected a specific pattern?
-- A common interface to refer to all objects (of a kind).
-- Creating objects without exposing the instantiation logic to the classes which sourceFileLocation Objects.
+- Factory: A common interface to refer to all objects (of a kind).
+- Factory: Creating objects without exposing the instantiation logic to the classes which sourceFileLocation Objects.
+- Strategy: Support for more than one sourceFileLocation.
 - Null Object: Handling null cases (invalid sourceFileLocation)
 #### Which classes participate in the pattern, serving what role?
 Product: SourceFileLocation.java\
