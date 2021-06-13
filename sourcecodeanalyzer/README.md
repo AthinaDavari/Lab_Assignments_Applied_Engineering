@@ -65,41 +65,67 @@ Design Patterns used:
 ### MetricsExporters redesign
 Design Patterns Used: Factory on Strategy and Null Object\
 Package: metricsexporter \
-We wanted outputFileType to be extendable.
+We wanted outputFileType to be extendable.\
+#### Which classes participate in the pattern, serving what role?
+Product:FileMetricsExporter.java\
+Factory:FileMetricsExporterFactory.java\
+Concreate Object: CsvMetricsExporter.java, JsonMetricsExporter.java\
+Null Object: NullMetricsExporter.java
+
 #### Pros:
 - Easier extensibility.
 - You are free to choose an algorithm (depents the output file type you want).
 - Extend FileMetricsExporter hierarchy without affecting other class code.
 - Open/Closed Principle: You can create new types of FileMetricsExporter into the program without breaking existing code.
 - You can avoid having to write testing cases which handles the null invalid outputFileType.
+
 #### Cons: 
-- Problems with handling Nuul cases on tests.
+- Problems with handling Null cases on tests.
 
 ### SourceCodeAnalyzers redesign
 Design Patterns Used: Factory - Facade and Null Object\
 Package: sourcecodeanalyzer\
-We wanted sourceCodeAnalyzerType to be extendable.
+We wanted sourceCodeAnalyzerType to be extendable.\
+#### Which classes participate in the pattern, serving what role?
+Facade: SourceCodeAnalyzerFacade.java\
+Product: SourceCodeAnalyzerType.java\
+Factory: SourceCodeAnalyzerFactory.java\
+Concreate Object: Regex.java, Strcomp.java\
+Null Object: NullSourceCodeAnalyzerType.java\
 #### Pros:
 - You can isolate your code from the complexity of a subsystem.
 - Use facade to define an entry point to the calulation of Metrics proccess.
 - We can extend SourceCodeAnalyzerType hierarchy without affecting the whole analysis of a file proccess.
 - You can avoid having to write testing cases which handles the null invalid sourceCodeAnalyzerType.
+
 #### Cons:
-- Problems with handling Nuul cases on tests.
+- Problems with handling Null cases on tests.
 
 ### SourceFileReaders redesign
 Design Patterns Used: Factory and Null Object\
 Package: sourcefilereader\
 We wanted sourceFileLocation to be extendable.
+#### Which classes participate in the pattern, serving what role?
+Product: SourceFileLocation.java\
+Factory: SourceFileLocationFactory.java\
+Concreate Object: LocalDiviceFile.java, WebFile.java\
+Null Object: NullFileLocation.java\
+
 #### Pros:
 -  You can avoid having to write testing cases which handles the null invalid sourceFileLocation.
+
 #### Cons:
-- Problems with handling Nuul cases on tests
+- Problems with handling Null cases on tests
 
 ### SourceCodeAnalyzers and SourceFileReaders Connection
 Design Patterns Used: Bridge\
 Packages: sourcecodeanalyzer, sourcefilereader\
 We wanted SourceCodeAnalyzers and SourceFileReaders dimensions to be independent.
+#### Which classes participate in the pattern, serving what role?
+Abstraction: SourceFileLocation.java\
+Implementor: SourceFileLocation.java\ 
+Refined Abstraction: LocalDiviceFile.java, WebFile.java, NullFileLocation.java\
+Concrete Implementation: LocalDiviceFile.java, WebFile.java, NullFileLocation.java\
 
 #### Pros:
 - Open/Closed Principle: You can introduce new abstractions and implementations independently from each other.\
@@ -109,7 +135,10 @@ We wanted SourceCodeAnalyzers and SourceFileReaders dimensions to be independent
 ### Code on democlient
 Design Patterns Used: Facade\
 Package: analyzefile\
-We wanted demoCliend class to low coupled to implementations.
+We wanted demoCliend class to low coupled to implementations.\
+
+#### Which classes participate in the pattern, serving what role?
+Facade: AnalyzeFileFacade.java
 #### Pros:
 - A simple interface for client, hiding from client the complexity of the anyleze code proccess.
 - When you change the proccess, you don't need to change client's code.
