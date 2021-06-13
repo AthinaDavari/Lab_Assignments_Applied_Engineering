@@ -65,7 +65,7 @@ Design Patterns used:
 ### MetricsExporters redesign
 Design Patterns Used: Factory on Strategy and Null Object\
 Package: metricsexporter \
-We wanted outputFileType to be extendable.\
+We wanted outputFileType to be extendable.
 #### Which classes participate in the pattern, serving what role?
 Product:FileMetricsExporter.java\
 Factory:FileMetricsExporterFactory.java\
@@ -85,14 +85,14 @@ Null Object: NullMetricsExporter.java
 ### SourceCodeAnalyzers redesign
 Design Patterns Used: Factory - Facade and Null Object\
 Package: sourcecodeanalyzer\
-We wanted sourceCodeAnalyzerType to be extendable.\
+We wanted sourceCodeAnalyzerType to be extendable.
 #### Which classes participate in the pattern, serving what role?
 Facade: SourceCodeAnalyzerFacade.java\
 Functionalities of facade: SourceCodeAnalyzerFactory.java\
 Product: SourceCodeAnalyzerType.java\
 Factory: SourceCodeAnalyzerFactory.java\
 Concreate Object: Regex.java, Strcomp.java\
-Null Object: NullSourceCodeAnalyzerType.java\
+Null Object: NullSourceCodeAnalyzerType.java
 #### Pros:
 - You can isolate your code from the complexity of a subsystem.
 - Use facade to define an entry point to the calulation of Metrics proccess.
@@ -110,7 +110,7 @@ We wanted sourceFileLocation to be extendable.
 Product: SourceFileLocation.java\
 Factory: SourceFileLocationFactory.java\
 Concreate Object: LocalDiviceFile.java, WebFile.java\
-Null Object: NullFileLocation.java\
+Null Object: NullFileLocation.java
 
 #### Pros:
 -  You can avoid having to write testing cases which handles the null invalid sourceFileLocation.
@@ -126,7 +126,7 @@ We wanted SourceCodeAnalyzers and SourceFileReaders dimensions to be independent
 Abstraction: SourceFileLocation.java\
 Implementor: SourceFileLocation.java\ 
 Refined Abstraction: LocalDiviceFile.java, WebFile.java, NullFileLocation.java\
-Concrete Implementation: LocalDiviceFile.java, WebFile.java, NullFileLocation.java\
+Concrete Implementation: LocalDiviceFile.java, WebFile.java, NullFileLocation.java
 
 #### Pros:
 - Open/Closed Principle: You can introduce new abstractions and implementations independently from each other.\
@@ -136,7 +136,7 @@ Concrete Implementation: LocalDiviceFile.java, WebFile.java, NullFileLocation.ja
 ### Code on democlient
 Design Patterns Used: Facade\
 Package: analyzefile\
-We wanted demoCliend class to low coupled to implementations.\
+We wanted demoCliend class to low coupled to implementations.
 
 #### Which classes participate in the pattern, serving what role?
 Facade: AnalyzeFileFacade.java
