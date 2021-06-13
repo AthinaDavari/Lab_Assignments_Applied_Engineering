@@ -88,6 +88,7 @@ Package: sourcecodeanalyzer\
 We wanted sourceCodeAnalyzerType to be extendable.\
 #### Which classes participate in the pattern, serving what role?
 Facade: SourceCodeAnalyzerFacade.java\
+Functionalities of facade: SourceCodeAnalyzerFactory.java\
 Product: SourceCodeAnalyzerType.java\
 Factory: SourceCodeAnalyzerFactory.java\
 Concreate Object: Regex.java, Strcomp.java\
@@ -139,6 +140,8 @@ We wanted demoCliend class to low coupled to implementations.\
 
 #### Which classes participate in the pattern, serving what role?
 Facade: AnalyzeFileFacade.java
+Functionalities of facade:SourceCodeAnalyzerFacade.java, FileMetricsExporterfactory.java
+
 #### Pros:
 - A simple interface for client, hiding from client the complexity of the anyleze code proccess.
 - When you change the proccess, you don't need to change client's code.
