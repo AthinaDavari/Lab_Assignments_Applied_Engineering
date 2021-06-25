@@ -9,6 +9,7 @@ Athens University of Economics and Business
 ### Description
 1. [First Assignment: Create and generate a histogram with a txt dataset.](./gradeshistogram/README.md)
 2. [Second Assignment: Test functions with junit.](./unittesting/README.md) 
+3. [Third Assignment: Design Patterns.](./sourcecodeanalyzer/README.md)
 
 ## Menu
 - [Getting Started](#getting-started)

@@ -21,5 +21,6 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -t bffea5bd-7caa-4f7a-b0bf-bfcc4086577c
-
-
+  - cd integration_testing
+  - chmod +x test.sh
+  - ./test.sh
